@@ -1,28 +1,83 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>My Diamond Shop</title>
+    <title>Diamond Shop Final</title>
+
+    <style>
+        body {
+            background: white;
+            font-family: Arial;
+            text-align: center;
+        }
+
+        .card {
+            background: #f2f9ff;
+            margin: 15px;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        input, select {
+            padding: 10px;
+            width: 80%;
+            margin: 5px;
+        }
+
+        button {
+            background: #3399ff;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+        }
+    </style>
+
+    <script>
+        function sendOrder(diamond) {
+            let userId = document.getElementById("userId").value;
+            let payment = document.getElementById("payment").value;
+
+            let token = "@MLBBdianomdbot";
+            let chatId = "https://api.telegram.org/bot";
+
+            let text = "💎 NEW ORDER\n"
+                     + "Diamonds: " + diamond + "\n"
+                     + "User ID: " + userId + "\n"
+                     + "Payment: " + payment;
+
+            let url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" 
+                    + chatId + "&text=" + encodeURIComponent(text);
+
+            fetch(url)
+            .then(response => alert("Order Sent!"))
+            .catch(error => alert("Error"));
+        }
+    </script>
+
 </head>
-<body style="text-align:center; font-family:sans-serif;">
-  <h1>💎 My Diamond Shop</h1>
-  <p>Welcome to my top-up service</p>
 
-  <h2>Prices</h2>
-  <p>86 Diamonds - 1500 Ks</p>
-  <p>172 Diamonds - 12000 Ks</p>
-  <p> 257 Diamonds - 17000 Ks</p>
-  <p>429 Diamonds - 27000 Ks</p>
-  <p> 600 Diamonds - 37000 Ks</p>
-  <p>706 Diamonds - 42000 Ks</p>
-  <p>1049 Diamonds - 65000 Ks</p>
-  
-  
-  
-  
-  
+<body>
 
-  <h2>Contact</h2>
-  <p>Telegram: @BoBoEdit34</p>
-  <p>Phone: 09776937797</p>
+<h1>💎 Diamond Shop Final Boss</h1>
+
+<div class="card">
+    <input type="text" id="userId" placeholder="User ID">
+    
+    <select id="payment">
+        <option>KBZ Pay</option>
+        <option>Wave Pay</option>
+    </select>
+</div>
+
+<div class="card">
+    <p>💠 86 Diamonds - 2,500 MMK</p>
+    <button onclick="sendOrder('86')">Order</button>
+</div>
+
+<div class="card">
+    <p>💠 172 Diamonds - 4,800 MMK</p>
+    <button onclick="sendOrder('172')">Order</button>
+</div>
+
 </body>
 </html>
