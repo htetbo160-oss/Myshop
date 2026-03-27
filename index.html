@@ -1,88 +1,114 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>Diamond Shop Final</title>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobile Legends Diamond Price List</title>
     <style>
         body {
-            background: white;
-            font-family: Arial;
-            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            padding: 0;
         }
-
-        .card {
-            background: #f2f9ff;
-            margin: 15px;
-            padding: 15px;
-            border-radius: 10px;
-        }
-
-        input, select {
-            padding: 10px;
+        .container {
             width: 80%;
-            margin: 5px;
+            margin: 20px auto;
         }
-
-        button {
-            background: #3399ff;
-            color: white;
+        .diamond-list {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        .diamond-list th, .diamond-list td {
             padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .diamond-list th {
+            background-color: #ff66cc;
+            color: white;
+        }
+        .diamond-list td {
+            background-color: #f2f2f2;
+        }
+        .diamond-list td button {
+            background-color: #ff66cc;
+            color: white;
+            padding: 10px 20px;
             border: none;
-            border-radius: 8px;
+            cursor: pointer;
+        }
+        .diamond-list td button:hover {
+            background-color: #ff3399;
+        }
+        h2 {
+            text-align: center;
+            color: #ff66cc;
         }
     </style>
-
-    <script>
-        function sendOrder(diamond) {
-            let userId = document.getElementById("userId").value;
-            let payment = document.getElementById("payment").value;
-
-            let token = "@MLBBdianomdbot";
-            let chatId = "https://api.telegram.org/bot";
-
-            let text = "💎 NEW ORDER\n"
-                     + "Diamonds: " + diamond + "\n"
-                     + "User ID: " + userId + "\n"
-                     + "User Saver: " + userId + "\n
-                     + "Payment: " + payment;
-
-            let url = "https://api.telegram.org/bot" + token + "/sendMessage?chat_id=" 
-                    + chatId + "&text=" + encodeURIComponent(text);
-
-            fetch(url)
-            .then(response => alert("Order Sent!"))
-            .catch(error => alert("Error"));
-        }
-    </script>
-
 </head>
-
 <body>
-
-<h1>💎 Diamond Shop Final Boss</h1>
-
-<div class="card">
-    <input type="text" id="userId" placeholder="User ID">
-    
-    <select id="payment">
-        <option>KBZ Pay</option>
-        <option>Wave Pay</option>
-    </select>
-</div>
-
-<div class="card">
-    <p>💠 86 Diamonds - 5,500 MMK</p>
-    <button onclick="sendOrder('86')">Order</button>
-</div>
-
-<div class="card">
-    <p>💠 172 Diamonds -  17,000MMK</p>
-    <button onclick="sendOrder('172')">Order</button>
-</div>@
-    <div class="card">
-    <p>💠 Weekly pass 1=  6300MMK</p>
-    <button onclick="sendOrder('1pass')">Order</button>
-</div>
-    
+    <div class="container">
+        <h2>💎 Mobile Legends Diamond Price List 💎</h2>
+        <table class="diamond-list">
+            <tr>
+                <th>Diamonds</th>
+                <th>Price (MMK)</th>
+                <th>Order Now</th>
+            </tr>
+            <tr>
+                <td>11 💎</td>
+                <td>$1050</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+            <tr>
+                <td>22 💎</td>
+                <td>$2200</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+            <tr>
+                <td>44 💎</td>
+                <td>$4100</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+            <tr>
+                <td>86 💎</td>
+                <td>$5500</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+            <tr>
+                <td>172 💎</td>
+                <td>$11000</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+            <tr>
+                <td>257 💎</td>
+                <td>$17000</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+            <tr>
+                <td>429 💎</td>
+                <td>$27000</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+            <tr>
+                <td>600 💎</td>
+                <td>$37000</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+            <tr>
+                <td>706 💎</td>
+                <td>$40200</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+            <tr>
+                <td>1049 💎</td>
+                <td>$65000</td>
+                <td><button onclick="window.location.href='order.html'">Order</button></td>
+            </tr>
+        </tr>
+            </td>Thanks your.</td>
+        </table>
+    </div>
 </body>
 </html>
