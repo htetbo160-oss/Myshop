@@ -1,114 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mobile Legends Diamond Price List</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-            margin: 0;
-            padding: 0;
-        }
-        .container {
-            width: 80%;
-            margin: 20px auto;
-        }
-        .diamond-list {
-            border-collapse: collapse;
-            width: 100%;
-        }
-        .diamond-list th, .diamond-list td {
-            padding: 10px;
-            text-align: center;
-            border: 1px solid #ddd;
-        }
-        .diamond-list th {
-            background-color: #ff66cc;
-            color: white;
-        }
-        .diamond-list td {
-            background-color: #f2f2f2;
-        }
-        .diamond-list td button {
-            background-color: #ff66cc;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            cursor: pointer;
-        }
-        .diamond-list td button:hover {
-            background-color: #ff3399;
-        }
-        h2 {
-            text-align: center;
-            color: #ff66cc;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BoBoHtet Diamond Shop</title>
+
+<style>
+body {
+    font-family: Arial;
+    background:#f5f5f5;
+    text-align:center;
+}
+
+h2 {
+    color:#ff4da6;
+}
+
+table {
+    width:90%;
+    margin:auto;
+    border-collapse:collapse;
+}
+
+th, td {
+    padding:12px;
+    border:1px solid #ddd;
+}
+
+th {
+    background:#ff4da6;
+    color:white;
+}
+
+button {
+    background:#ff4da6;
+    color:white;
+    border:none;
+    padding:10px 15px;
+    cursor:pointer;
+}
+
+button:hover {
+    background:#ff1a8c;
+}
+
+/* Popup */
+#paymentBox {
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.6);
+}
+
+.popup {
+    background:white;
+    margin:60px auto;
+    padding:20px;
+    width:90%;
+    max-width:350px;
+    border-radius:10px;
+}
+</style>
 </head>
+
 <body>
-    <div class="container">
-        <h2>💎 Mobile Legends Diamond Price List 💎</h2>
-        <table class="diamond-list">
-            <tr>
-                <th>Diamonds</th>
-                <th>Price (MMK)</th>
-                <th>Order Now</th>
-            </tr>
-            <tr>
-                <td>11 💎</td>
-                <td>$1050</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-            <tr>
-                <td>22 💎</td>
-                <td>$2200</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-            <tr>
-                <td>44 💎</td>
-                <td>$4100</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-            <tr>
-                <td>86 💎</td>
-                <td>$5500</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-            <tr>
-                <td>172 💎</td>
-                <td>$11000</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-            <tr>
-                <td>257 💎</td>
-                <td>$17000</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-            <tr>
-                <td>429 💎</td>
-                <td>$27000</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-            <tr>
-                <td>600 💎</td>
-                <td>$37000</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-            <tr>
-                <td>706 💎</td>
-                <td>$40200</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-            <tr>
-                <td>1049 💎</td>
-                <td>$65000</td>
-                <td><button onclick="window.location.href='order.html'">Order</button></td>
-            </tr>
-        </tr>
-            </td>Thanks your.</td>
-        </table>
-    </div>
+
+<h2>💎 Mobile Legends Diamond Price List 💎</h2>
+
+<table>
+<tr>
+<th>Diamonds</th>
+<th>Price (MMK)</th>
+<th>Buy</th>
+</tr>
+
+<tr><td>11 💎</td><td>1050</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+<tr><td>22 💎</td><td>2200</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+<tr><td>44 💎</td><td>4100</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+<tr><td>86 💎</td><td>5500</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+<tr><td>172 💎</td><td>11000</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+<tr><td>257 💎</td><td>17000</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+<tr><td>429 💎</td><td>27000</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+<tr><td>600 💎</td><td>37000</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+<tr><td>706 💎</td><td>40200</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+<tr><td>1049 💎</td><td>65000</td><td><button onclick="openPayment()">ငွေသွင်းခြင်း</button></td></tr>
+
+</table>
+
+<!-- Payment Popup -->
+<div id="paymentBox">
+  <div class="popup">
+
+    <h3>💰 ငွေသွင်းရန်</h3>
+
+    <p>KBZ Pay<br>BoBoHtet<br>09776937797</p>
+    <button onclick="copyText('KBZ Pay - BoBoHtet - 09776937797')">Copy</button>
+
+    <hr>
+
+    <p>Wave Money<br>BoBoHtet<br>09776937797</p>
+    <button onclick="copyText('Wave Money - BoBoHtet - 09776937797')">Copy</button>
+
+    <hr>
+
+    <p>AYA Pay<br>BoBoHtet<br>09776937797</p>
+    <button onclick="copyText('AYA Pay - BoBoHtet - 09776937797')">Copy</button>
+
+    <br><br>
+    <button onclick="closePayment()">Close</button>
+
+  </div>
+</div>
+
+<script>
+function openPayment(){
+    document.getElementById("paymentBox").style.display="block";
+}
+
+function closePayment(){
+    document.getElementById("paymentBox").style.display="none";
+}
+
+function copyText(text){
+    navigator.clipboard.writeText(text);
+    alert("Copy လုပ်ပြီးပါပြီ။ ငွေသွင်းပါ 😊");
+}
+</script>
+
 </body>
 </html>
